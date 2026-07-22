@@ -1,0 +1,62 @@
+{
+  "name": "edge-navigation",
+  "displayName": "Edge Navigation",
+  "description": "Reveal workbench surfaces when directional focus reaches an editor edge.",
+  "version": "0.1.0",
+  "private": true,
+  "publisher": "igorbedesqui",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bdsqqq/edge-navigation-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:edgeNavigation.left",
+    "onCommand:edgeNavigation.down",
+    "onCommand:edgeNavigation.up",
+    "onCommand:edgeNavigation.right"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "edgeNavigation.left",
+        "title": "Edge Navigation: Focus Left"
+      },
+      {
+        "command": "edgeNavigation.down",
+        "title": "Edge Navigation: Focus Down"
+      },
+      {
+        "command": "edgeNavigation.up",
+        "title": "Edge Navigation: Focus Up"
+      },
+      {
+        "command": "edgeNavigation.right",
+        "title": "Edge Navigation: Focus Right"
+      }
+    ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "check": "pnpm compile",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "^1.100.0",
+    "@vscode/vsce": "^3.6.2",
+    "typescript": "^5.9.0"
+  }
+}
